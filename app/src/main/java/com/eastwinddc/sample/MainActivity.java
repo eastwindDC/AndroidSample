@@ -1,8 +1,11 @@
 package com.eastwinddc.sample;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.LayoutInflaterFactory;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,10 +15,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private ListView listView;
+    private ListAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +50,11 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        listView = (ListView) findViewById(R.id.activityList);
+        adapter = new ListAdapter();
+        listView.setOnItemClickListener(adapter);
+        listView.setAdapter(adapter);
     }
 
     @Override
@@ -97,5 +112,46 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private static String[] nameArray = {
+      "device info"
+    };
+    private static Class[] activityArray= {
+            DeviceInfoActivity.class
+    };
+    class ListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener{
+
+        @Override
+        public int getCount() {
+            return nameArray.length;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return nameArray[position];
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            if(convertView == null){
+                convertView = MainActivity.this.getLayoutInflater().
+                        inflate(R.layout.item_activity_list,parent,false);
+            }
+            TextView textView = (TextView) convertView.findViewById(R.id.title);
+            textView.setText(String.valueOf(getItem(position)));
+            return convertView;
+        }
+
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Intent intent = new Intent(MainActivity.this,activityArray[position]);
+            startActivity(intent);
+        }
     }
 }
