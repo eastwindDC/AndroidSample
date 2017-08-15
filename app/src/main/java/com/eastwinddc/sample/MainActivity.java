@@ -21,6 +21,8 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.eastwinddc.sample.accessibility.AccessibilityActivity;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -115,10 +117,11 @@ public class MainActivity extends AppCompatActivity
     }
 
     private static String[] nameArray = {
-      "device info"
+      "device info", "AccessibilityService"
     };
     private static Class[] activityArray= {
-            DeviceInfoActivity.class
+            DeviceInfoActivity.class,
+            AccessibilityActivity.class
     };
     class ListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener{
 
