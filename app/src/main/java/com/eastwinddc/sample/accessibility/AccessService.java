@@ -1,20 +1,47 @@
 package com.eastwinddc.sample.accessibility;
 
-import android.accessibilityservice.AccessibilityService;
-import android.accessibilityservice.AccessibilityServiceInfo;
+import android.app.Notification;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+
+import java.util.List;
 
 /**
  * Created by eastwinddc on 2017/8/14.
  */
 
-public class AccessService extends AccessibilityService{
+public class AccessService extends BaseAccessService{
     private static final String TAG = AccessService.class.getSimpleName();
+
+    private static final String WECHAT = "com.tencent.mm";
     @Override
     public void onAccessibilityEvent(AccessibilityEvent event) {
-        Log.d(TAG, "onAccessibilityEvent: "+event.getEventType());
+        Log.d(TAG, "onAccessibilityEvent: "+event);
+        int type = event.getEventType();
+        String packageName = String.valueOf(event.getPackageName());
+        AccessibilityNodeInfo rootNode ;
+
+        //wechat
+        if(packageName.equals(WECHAT)) {
+            //notification
+            if (type == AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED) {
+                Log.i(TAG, "onAccessibilityEvent: " + event.getText());
+                Parcelable data = event.getParcelableData();
+                if (data == null || !(data instanceof Notification)) {
+                    return;
+                }
+                Notification nf = (Notification) data;
+                try {
+                    nf.contentIntent.send();
+                } catch (PendingIntent.CanceledException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     @Override
