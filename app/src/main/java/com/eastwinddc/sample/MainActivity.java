@@ -1,11 +1,10 @@
 package com.eastwinddc.sample;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.StringRes;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.view.LayoutInflaterFactory;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -22,6 +21,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.eastwinddc.sample.accessibility.AccessibilityActivity;
+import com.eastwinddc.sample.customView.CustomViewActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -116,23 +116,33 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private static String[] nameArray = {
-      "device info", "AccessibilityService"
-    };
-    private static Class[] activityArray= {
-            DeviceInfoActivity.class,
-            AccessibilityActivity.class
+    private static class EntryActivity {
+
+        private final int titleId;
+        private final Class<? extends BaseActivity> activity;
+
+        EntryActivity(@StringRes int titleId, Class activity){
+            this.titleId = titleId;
+            this.activity = activity;
+        }
+    }
+    private static EntryActivity[] entryArray= {
+        new EntryActivity(R.string.device_info,DeviceInfoActivity.class),
+            new EntryActivity(R.string.access_demo,AccessibilityActivity.class),
+            new EntryActivity(R.string.custom_view, CustomViewActivity.class)
+
+
     };
     class ListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener{
 
         @Override
         public int getCount() {
-            return nameArray.length;
+            return entryArray.length;
         }
 
         @Override
         public Object getItem(int position) {
-            return nameArray[position];
+            return null;
         }
 
         @Override
@@ -147,13 +157,13 @@ public class MainActivity extends AppCompatActivity
                         inflate(R.layout.item_activity_list,parent,false);
             }
             TextView textView = (TextView) convertView.findViewById(R.id.title);
-            textView.setText(String.valueOf(getItem(position)));
+            textView.setText(entryArray[position].titleId);
             return convertView;
         }
 
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Intent intent = new Intent(MainActivity.this,activityArray[position]);
+            Intent intent = new Intent(MainActivity.this, entryArray[position].activity);
             startActivity(intent);
         }
     }
