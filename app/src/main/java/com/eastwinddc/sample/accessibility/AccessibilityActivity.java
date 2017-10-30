@@ -20,12 +20,15 @@ public class AccessibilityActivity extends BaseActivity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_access_activity);
-
-        init();
     }
 
-    private void init(){
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_access_activity;
+    }
+
+    @Override
+    protected void initViews(){
         accessibilityManager = (AccessibilityManager) getSystemService(Context.ACCESSIBILITY_SERVICE);
     }
     @Override

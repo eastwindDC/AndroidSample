@@ -17,7 +17,17 @@ public class DeviceInfoActivity extends BaseActivity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_device_info);
+
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_device_info;
+    }
+
+    @Override
+    protected void initViews() {
+        super.initViews();
         textView = (TextView) findViewById(R.id.heap);
         ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
         activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);

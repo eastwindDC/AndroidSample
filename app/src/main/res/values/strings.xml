@@ -12,4 +12,10 @@
     <string name="access_demo">access示例</string>
     <string name="custom_view">custom view</string>
     <string name="recycler_view">recycler_view</string>
+    <string name="card_view">card_view</string>
+    <string name="text_view">text_view</string>
+
+    <string name="plain_text">%s:\n兰陵美酒郁金香，玉碗盛来琥珀光。但使主人能醉客，不知何处是他乡</string>
+    <string name="html_text">html:\n<b>兰陵美酒郁金香</b>，<i>玉碗盛来琥珀光</i>。<u>但使主人能醉客，不知何处是他乡</u></string>
+    <string name="html_format_text">%s:\n&lt;b>兰陵美酒郁金香&lt;/b>，&lt;i>玉碗盛来琥珀光&lt;/i>。&lt;u>但使主人能醉客，不知何处是他乡&lt;/u></string>
 </resources>

@@ -1,16 +1,13 @@
-package com.eastwinddc.sample.customView;
+package com.eastwinddc.sample;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.eastwinddc.sample.BaseActivity;
-import com.eastwinddc.sample.R;
-
 /**
- * Created by ewinddc on 2017/10/17.
+ * Created by ewinddc on 2017/10/30.
  */
 
-public class CustomViewActivity extends BaseActivity {
+public class CardViewActivity extends BaseActivity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +15,7 @@ public class CustomViewActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_custom_view;
+        return R.layout.item_search_list;
     }
 
     @Override

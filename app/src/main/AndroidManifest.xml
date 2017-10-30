@@ -39,6 +39,8 @@
 
         <activity android:name=".customView.CustomViewActivity"></activity>
         <activity android:name=".RecylerViewActivity"></activity>
+        <activity android:name=".CardViewActivity"></activity>
+        <activity android:name=".TextViewActivity"></activity>
     </application>
 
 </manifest>

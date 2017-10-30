@@ -15,7 +15,17 @@ public class RecylerViewActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_view);
+
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_recycler_view;
+    }
+
+    @Override
+    protected void initViews() {
+        super.initViews();
         recyclerView = (RecyclerView) findViewById(R.id.feedList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
