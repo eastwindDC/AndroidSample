@@ -17,5 +17,6 @@
 
     <string name="plain_text">%s:\n兰陵美酒郁金香，玉碗盛来琥珀光。但使主人能醉客，不知何处是他乡</string>
     <string name="html_text">html:\n<b>兰陵美酒郁金香</b>，<i>玉碗盛来琥珀光</i>。<u>但使主人能醉客，不知何处是他乡</u></string>
-    <string name="html_format_text">%s:\n&lt;b>兰陵美酒郁金香&lt;/b>，&lt;i>玉碗盛来琥珀光&lt;/i>。&lt;u>但使主人能醉客，不知何处是他乡&lt;/u></string>
+    <string name="html_format_text">%s:&lt;br>&lt;big>兰陵美酒郁金香&lt;/big>，&lt;i>玉碗盛来琥珀光&lt;/i>。
+        &lt;u>但使主人能醉客&lt;/u>，&lt;font color=\'red\'>不知何处是他乡</string>
 </resources>
