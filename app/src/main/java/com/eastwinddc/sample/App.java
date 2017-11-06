@@ -13,6 +13,9 @@ public class App extends Application{
     public void onCreate() {
         super.onCreate();
         context = this.getApplicationContext();
+
+        //we call loading method temporarily until loadingActivity is done.
+        LoadingManager.init(this);
     }
     public static Context getContext(){
         return context;
