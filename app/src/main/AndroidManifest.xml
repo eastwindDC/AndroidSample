@@ -46,6 +46,7 @@
         <activity android:name=".TextViewActivity"></activity>
 
         <activity android:name=".lockscreen.LockScreenActivity"
+            android:launchMode="singleInstance"
             android:theme="@style/AppTheme.Translucent"></activity>
         <service android:name=".lockscreen.LockScreenService"/>
     </application>

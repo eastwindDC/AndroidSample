@@ -1,7 +1,10 @@
 package com.eastwinddc.sample.lockscreen;
 
+import android.app.KeyguardManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,8 +21,6 @@ public class LockScreenActivity extends BaseActivity implements View.OnTouchList
     private static final String TAG = LockScreenActivity.class.getSimpleName();
     private View rootView;
     private View parentView;
-    private boolean isMoving = false;
-    int lastX = 0;
     @Override
     protected int getLayoutId() {
         return R.layout.activity_lock_screen;
@@ -28,8 +29,18 @@ public class LockScreenActivity extends BaseActivity implements View.OnTouchList
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
+
+//        KeyguardManager keyguardManager = (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
+//        KeyguardManager.KeyguardLock keyguardLock = keyguardManager.newKeyguardLock("feiyuLockScreen");
+//        keyguardLock.disableKeyguard();
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD |
+                WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
+//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        screenWidth = metrics.widthPixels;
     }
 
     @Override
@@ -57,37 +68,49 @@ public class LockScreenActivity extends BaseActivity implements View.OnTouchList
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
     }
 
+    private int screenWidth = 0;
+    private boolean isMoving = false;
+    private int lastX = 0;
+    private int translate = 0;
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         int action = event.getAction();
-
-        int offsetX = 0;
+        int curX = (int) event.getRawX();
         switch (action){
             case MotionEvent.ACTION_DOWN:
-                lastX = (int) event.getX();
                 isMoving = false;
-                Log.d(TAG, "onTouch: down "+lastX);
+                translate = 0;
                 break;
             case MotionEvent.ACTION_MOVE:
-                offsetX = (int) (event.getX() - lastX);
-
-                lastX = (int) event.getX();
-                Log.v(TAG, "onTouch: move "+offsetX);
+                int offsetX = curX - lastX;
+                lastX = curX;
                 if(isMoving){
-                    parentView.scrollBy(-offsetX,0);
+                    //we just support swipe to right
+                    if(translate + offsetX > 0){
+                        translate += offsetX;
+                        //parent scrolling -offset which relatively lead to child scroll offset
+                        parentView.scrollBy(-offsetX,0);
+                    }
+
                 }else {
                     isMoving = true;
                 }
                 break;
             case MotionEvent.ACTION_UP:
-                lastX = (int) event.getX();
-                Log.d(TAG, "onTouch: up "+lastX);
                 isMoving = false;
-                parentView.scrollTo(0,0);
+                if(translate > screenWidth * 0.4){
+                    Log.d(TAG, "onTouch: up finish");
+                    parentView.scrollTo(screenWidth,0);
+                    finish();
+                }else {
+                    Log.d(TAG, "onTouch: up reset");
+                    parentView.scrollTo(0,0);
+                }
                 break;
+            default:
+                return false;
         }
         return true;
     }
