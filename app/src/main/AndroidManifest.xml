@@ -45,7 +45,8 @@
         <activity android:name=".CardViewActivity"></activity>
         <activity android:name=".TextViewActivity"></activity>
 
-        <activity android:name=".lockscreen.LockScreenActivity"/>
+        <activity android:name=".lockscreen.LockScreenActivity"
+            android:theme="@style/AppTheme.Translucent"></activity>
         <service android:name=".lockscreen.LockScreenService"/>
     </application>
 
