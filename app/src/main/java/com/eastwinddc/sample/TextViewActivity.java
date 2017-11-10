@@ -1,9 +1,16 @@
 package com.eastwinddc.sample;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.Html;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
+import android.text.style.BackgroundColorSpan;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.RelativeSizeSpan;
+import android.text.style.ScaleXSpan;
 import android.widget.TextView;
 
 /**
@@ -14,6 +21,8 @@ public class TextViewActivity extends BaseActivity{
     private TextView plainView;
     private TextView htmlView;
     private TextView htmlFormatView;
+
+    private TextView spanView;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,12 +39,21 @@ public class TextViewActivity extends BaseActivity{
         plainView = (TextView) findViewById(R.id.plainText);
         htmlView = (TextView) findViewById(R.id.htmlText);
         htmlFormatView = (TextView) findViewById(R.id.htmlArguText);
+        spanView = (TextView) findViewById(R.id.spanText);
 
         String text = getString(R.string.plain_text,"plain formatting");
         plainView.setText(text);
         htmlView.setText(R.string.html_text);
         text = getString(R.string.html_format_text, TextUtils.htmlEncode("html formatting"));
         htmlFormatView.setText(Html.fromHtml(text));
+
+        text = "This is a span text";
+        SpannableStringBuilder ssb = new SpannableStringBuilder(text);
+        ssb.setSpan(new ScaleXSpan(2.0f),0,5, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+        ssb.setSpan(new ForegroundColorSpan(Color.RED),6,8,Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+        ssb.setSpan(new RelativeSizeSpan(4.0f),9,13,Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+        ssb.setSpan(new BackgroundColorSpan(Color.BLUE),14,text.length(),Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+        spanView.setText(ssb);
     }
 
     @Override

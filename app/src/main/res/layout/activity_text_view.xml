@@ -17,4 +17,7 @@
         android:id="@+id/htmlArguText"
         style="@style/textview"
         />
+    <TextView
+        android:id="@+id/spanText"
+        style="@style/textview" />
 </LinearLayout>
