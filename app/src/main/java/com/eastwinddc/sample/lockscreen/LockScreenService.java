@@ -19,7 +19,7 @@ public class LockScreenService extends Service{
     public void onCreate() {
         super.onCreate();
         Log.d(TAG, "onCreate: ");
-        initReceiver();
+//        initReceiver();
     }
 
     @Nullable

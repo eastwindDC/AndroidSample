@@ -22,6 +22,7 @@ import android.widget.TextView;
 
 import com.eastwinddc.sample.accessibility.AccessibilityActivity;
 import com.eastwinddc.sample.customView.CustomViewActivity;
+import com.eastwinddc.sample.customView.TouchEventActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -127,7 +128,8 @@ public class MainActivity extends AppCompatActivity
         }
     }
     private static EntryActivity[] entryArray= {
-        new EntryActivity(R.string.device_info,DeviceInfoActivity.class),
+            new EntryActivity(R.string.touch_event, TouchEventActivity.class),
+            new EntryActivity(R.string.device_info,DeviceInfoActivity.class),
             new EntryActivity(R.string.access_demo,AccessibilityActivity.class),
             new EntryActivity(R.string.custom_view, CustomViewActivity.class),
             new EntryActivity(R.string.recycler_view,RecylerViewActivity.class),

@@ -47,12 +47,12 @@ public class TextViewActivity extends BaseActivity{
         text = getString(R.string.html_format_text, TextUtils.htmlEncode("html formatting"));
         htmlFormatView.setText(Html.fromHtml(text));
 
-        text = "This is a span text";
+        text = "我们中国 is a span text which is just a test";
         SpannableStringBuilder ssb = new SpannableStringBuilder(text);
         ssb.setSpan(new ScaleXSpan(2.0f),0,5, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
-        ssb.setSpan(new ForegroundColorSpan(Color.RED),6,8,Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
-        ssb.setSpan(new RelativeSizeSpan(4.0f),9,13,Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
-        ssb.setSpan(new BackgroundColorSpan(Color.BLUE),14,text.length(),Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+        ssb.setSpan(new ForegroundColorSpan(Color.RED),5,8,Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+        ssb.setSpan(new RelativeSizeSpan(2.0f),9,13,Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+        ssb.setSpan(new ForegroundColorSpan(Color.BLUE),14,text.length(),Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
         spanView.setText(ssb);
     }
 

@@ -49,6 +49,8 @@
             android:launchMode="singleInstance"
             android:theme="@style/AppTheme.Translucent"></activity>
         <service android:name=".lockscreen.LockScreenService"/>
+
+        <activity android:name=".customView.TouchEventActivity"/>
     </application>
 
 </manifest>
