@@ -5,18 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <com.eastwinddc.sample.touchEvent.CustomLayout
         android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@android:color/holo_blue_light">
-        <Button
+        <com.eastwinddc.sample.touchEvent.CustomButton
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:text="@string/app_name"
             android:background="@android:color/holo_blue_dark"/>
-    </LinearLayout>
+    </com.eastwinddc.sample.touchEvent.CustomLayout>
 
 </LinearLayout>

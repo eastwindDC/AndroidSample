@@ -1,4 +1,4 @@
-package com.eastwinddc.sample.customView;
+package com.eastwinddc.sample.touchEvent;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,8 +17,6 @@ import com.eastwinddc.sample.R;
 public class TouchEventActivity extends BaseActivity implements View.OnTouchListener{
     private static final String TAG = TouchEventActivity.class.getSimpleName();
     private ViewGroup root;
-    private ViewGroup layout;
-    private View bt;
 
     @Override
     protected int getLayoutId() {
@@ -34,15 +32,7 @@ public class TouchEventActivity extends BaseActivity implements View.OnTouchList
     protected void initViews() {
         super.initViews();
         root = (ViewGroup) findViewById(R.id.root_view);
-        root.setTag("root");
-        layout = (ViewGroup) findViewById(R.id.layout);
-        layout.setTag("layout");
-        bt = findViewById(R.id.button);
-        bt.setTag("button");
-
         root.setOnTouchListener(this);
-        layout.setOnTouchListener(this);
-        bt.setOnTouchListener(this);
     }
 
     @Override
@@ -62,8 +52,19 @@ public class TouchEventActivity extends BaseActivity implements View.OnTouchList
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-        Log.v(TAG, "onTouch: "+(String)v.getTag()+event.getAction());
+        Log.d(TAG, "onTouch: "+event.getAction());
         return false;
     }
 
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        Log.d(TAG, "dispatchTouchEvent: "+ev.getAction());
+        return super.dispatchTouchEvent(ev);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        Log.d(TAG, "onTouchEvent: "+event.getAction());
+        return super.onTouchEvent(event);
+    }
 }

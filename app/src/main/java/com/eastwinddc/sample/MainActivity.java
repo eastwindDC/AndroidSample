@@ -22,7 +22,7 @@ import android.widget.TextView;
 
 import com.eastwinddc.sample.accessibility.AccessibilityActivity;
 import com.eastwinddc.sample.customView.CustomViewActivity;
-import com.eastwinddc.sample.customView.TouchEventActivity;
+import com.eastwinddc.sample.touchEvent.TouchEventActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

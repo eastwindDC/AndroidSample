@@ -50,7 +50,7 @@
             android:theme="@style/AppTheme.Translucent"></activity>
         <service android:name=".lockscreen.LockScreenService"/>
 
-        <activity android:name=".customView.TouchEventActivity"/>
+        <activity android:name=".touchEvent.TouchEventActivity"/>
     </application>
 
 </manifest>
