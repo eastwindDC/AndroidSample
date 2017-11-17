@@ -39,13 +39,14 @@ public class LockScreenService extends Service{
     public void onDestroy() {
         Log.d(TAG, "onDestroy: ");
         super.onDestroy();
+        unregisterReceiver(receiver);
     }
-
+    MyReceiver receiver;
     private void initReceiver(){
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
         intentFilter.addAction(Intent.ACTION_SCREEN_ON);
-        MyReceiver receiver = new MyReceiver();
+        receiver = new MyReceiver();
         registerReceiver(receiver,intentFilter);
     }
 
