@@ -1,4 +1,4 @@
-package com.eastwinddc.sample;
+package com.eastwinddc.sample.animation;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,7 +13,7 @@ import com.eastwinddc.sample.R;
  * Created by ewinddc on 2017/11/23.
  */
 
-public class AnimationActivity extends BaseActivity implements View.OnClickListener{
+public class ViewAnimationActivity extends BaseActivity implements View.OnClickListener{
     private View view;
     private Animation animation;
     @Override

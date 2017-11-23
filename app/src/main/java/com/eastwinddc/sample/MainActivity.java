@@ -17,17 +17,19 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.ListView;
+import android.widget.GridView;
 import android.widget.TextView;
 
 import com.eastwinddc.sample.accessibility.AccessibilityActivity;
+import com.eastwinddc.sample.animation.PropertyAnimationActivity;
+import com.eastwinddc.sample.animation.ViewAnimationActivity;
 import com.eastwinddc.sample.customView.CustomViewActivity;
 import com.eastwinddc.sample.touchEvent.TouchEventActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private ListView listView;
+    private GridView listView;
     private ListAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +56,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        listView = (ListView) findViewById(R.id.activityList);
+        listView = (GridView) findViewById(R.id.activityList);
         adapter = new ListAdapter();
         listView.setOnItemClickListener(adapter);
         listView.setAdapter(adapter);
@@ -135,7 +137,8 @@ public class MainActivity extends AppCompatActivity
             new EntryActivity(R.string.recycler_view,RecylerViewActivity.class),
             new EntryActivity(R.string.card_view,CardViewActivity.class),
             new EntryActivity(R.string.text_view,TextViewActivity.class),
-            new EntryActivity(R.string.animation_demo,AnimationActivity.class)
+            new EntryActivity(R.string.animation_demo,ViewAnimationActivity.class),
+            new EntryActivity(R.string.property_animation, PropertyAnimationActivity.class)
     };
     class ListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener{
 
