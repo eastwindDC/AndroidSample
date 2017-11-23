@@ -44,6 +44,7 @@
         <activity android:name=".RecylerViewActivity"></activity>
         <activity android:name=".CardViewActivity"></activity>
         <activity android:name=".TextViewActivity"></activity>
+        <activity android:name=".AnimationActivity"/>
 
         <activity android:name=".lockscreen.LockScreenActivity"
             android:launchMode="singleInstance"

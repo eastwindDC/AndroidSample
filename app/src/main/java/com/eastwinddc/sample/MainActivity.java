@@ -134,7 +134,8 @@ public class MainActivity extends AppCompatActivity
             new EntryActivity(R.string.custom_view, CustomViewActivity.class),
             new EntryActivity(R.string.recycler_view,RecylerViewActivity.class),
             new EntryActivity(R.string.card_view,CardViewActivity.class),
-            new EntryActivity(R.string.text_view,TextViewActivity.class)
+            new EntryActivity(R.string.text_view,TextViewActivity.class),
+            new EntryActivity(R.string.animation_demo,AnimationActivity.class)
     };
     class ListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener{
 
