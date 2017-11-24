@@ -2,6 +2,7 @@ package com.eastwinddc.sample.customView;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
 
 import com.eastwinddc.sample.BaseActivity;
 import com.eastwinddc.sample.R;
@@ -11,9 +12,17 @@ import com.eastwinddc.sample.R;
  */
 
 public class CustomViewActivity extends BaseActivity {
+    private HydrogenView circleView ;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    protected void initViews() {
+        super.initViews();
+        circleView = (HydrogenView) findViewById(R.id.circle);
+        circleView.setOnTouchListener(circleView);
     }
 
     @Override
@@ -24,11 +33,13 @@ public class CustomViewActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        circleView.start();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        circleView.stop();
     }
 
     @Override
