@@ -39,15 +39,15 @@ public class HydrogenView extends BaseView implements View.OnTouchListener{
         paint.setStyle(Paint.Style.FILL);
         canvas.drawCircle(cx, cy, centerRadius, paint);
 
-        canvas.drawCircle(getPX(),getPY(),pointRadius,paint);
+        canvas.drawCircle(getPX(annulusRadius),getPY(annulusRadius),pointRadius,paint);
 //        canvas.drawCircle(cx+annulusRadius,cy,pointRadius,paint);
     }
 
-    private float getPX(){
-        return (float) (Math.cos(degree * Math.PI/180)*annulusRadius) + cx;
+    private float getPX(int radius){
+        return (float) (Math.cos(degree * Math.PI/180)*radius) + cx;
     }
-    private float getPY(){
-        return (float) (Math.sin(degree * Math.PI/180)*annulusRadius) + cy;
+    private float getPY(int radius){
+        return (float) (Math.sin(degree * Math.PI/180)*radius) + cy;
     }
 
     public int getDegree() {
