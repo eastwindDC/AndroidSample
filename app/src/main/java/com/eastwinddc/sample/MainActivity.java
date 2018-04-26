@@ -24,6 +24,7 @@ import com.eastwinddc.sample.accessibility.AccessibilityActivity;
 import com.eastwinddc.sample.animation.PropertyAnimationActivity;
 import com.eastwinddc.sample.animation.ViewAnimationActivity;
 import com.eastwinddc.sample.customView.CustomViewActivity;
+import com.eastwinddc.sample.hw.BtActivity;
 import com.eastwinddc.sample.touchEvent.TouchEventActivity;
 
 public class MainActivity extends AppCompatActivity
@@ -138,7 +139,9 @@ public class MainActivity extends AppCompatActivity
             new EntryActivity(R.string.card_view,CardViewActivity.class),
             new EntryActivity(R.string.text_view,TextViewActivity.class),
             new EntryActivity(R.string.animation_demo,ViewAnimationActivity.class),
-            new EntryActivity(R.string.property_animation, PropertyAnimationActivity.class)
+            new EntryActivity(R.string.property_animation, PropertyAnimationActivity.class),
+            new EntryActivity(R.string.bt, BtActivity.class)
+
     };
     class ListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener{
 
