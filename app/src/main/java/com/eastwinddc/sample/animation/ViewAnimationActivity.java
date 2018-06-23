@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
-import com.eastwinddc.sample.BaseActivity;
+import com.eastwinddc.sample.base.BaseActivity;
 import com.eastwinddc.sample.R;
 
 /**
@@ -18,7 +18,7 @@ public class ViewAnimationActivity extends BaseActivity implements View.OnClickL
     private Animation animation;
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_animation;
+        return R.layout.activity_view_animation;
     }
 
     @Override

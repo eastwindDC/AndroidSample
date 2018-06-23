@@ -23,6 +23,7 @@ import android.widget.TextView;
 import com.eastwinddc.sample.accessibility.AccessibilityActivity;
 import com.eastwinddc.sample.animation.PropertyAnimationActivity;
 import com.eastwinddc.sample.animation.ViewAnimationActivity;
+import com.eastwinddc.sample.base.BaseActivity;
 import com.eastwinddc.sample.customView.CustomViewActivity;
 import com.eastwinddc.sample.hw.BtActivity;
 import com.eastwinddc.sample.touchEvent.TouchEventActivity;

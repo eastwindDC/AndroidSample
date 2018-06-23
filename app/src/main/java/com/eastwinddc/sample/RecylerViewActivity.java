@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.eastwinddc.sample.base.BaseActivity;
+
 /**
  * Created by ewinddc on 2017/10/18.
  */

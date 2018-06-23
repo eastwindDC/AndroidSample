@@ -7,17 +7,18 @@ import android.text.Html;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import android.text.style.BackgroundColorSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
 import android.text.style.ScaleXSpan;
 import android.widget.TextView;
 
+import com.eastwinddc.sample.base.BaseActivity;
+
 /**
  * Created by ewinddc on 2017/10/30.
  */
 
-public class TextViewActivity extends BaseActivity{
+public class TextViewActivity extends BaseActivity {
     private TextView plainView;
     private TextView htmlView;
     private TextView htmlFormatView;

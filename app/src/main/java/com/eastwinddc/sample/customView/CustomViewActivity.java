@@ -2,9 +2,8 @@ package com.eastwinddc.sample.customView;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.View;
 
-import com.eastwinddc.sample.BaseActivity;
+import com.eastwinddc.sample.base.BaseActivity;
 import com.eastwinddc.sample.R;
 
 /**

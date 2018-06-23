@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.accessibility.AccessibilityManager;
 import android.widget.Toast;
 
-import com.eastwinddc.sample.BaseActivity;
+import com.eastwinddc.sample.base.BaseActivity;
 import com.eastwinddc.sample.R;
 
 /**

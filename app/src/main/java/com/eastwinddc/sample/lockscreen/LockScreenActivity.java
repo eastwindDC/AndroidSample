@@ -1,7 +1,5 @@
 package com.eastwinddc.sample.lockscreen;
 
-import android.app.KeyguardManager;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
@@ -10,7 +8,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.eastwinddc.sample.BaseActivity;
+import com.eastwinddc.sample.base.BaseActivity;
 import com.eastwinddc.sample.R;
 
 /**

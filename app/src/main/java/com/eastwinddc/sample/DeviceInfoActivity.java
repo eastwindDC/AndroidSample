@@ -3,20 +3,21 @@ package com.eastwinddc.sample;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
-import android.app.Application;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.telephony.TelephonyManager;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.eastwinddc.sample.base.BaseActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +28,7 @@ import pub.devrel.easypermissions.EasyPermissions;
  * Created by eastwinddc on 2017/7/17.
  */
 
-public class DeviceInfoActivity extends BaseActivity{
+public class DeviceInfoActivity extends BaseActivity {
     private static final long MB = 1024*1024;
     private ActivityManager activityManager;
     private TelephonyManager telephonyManager;

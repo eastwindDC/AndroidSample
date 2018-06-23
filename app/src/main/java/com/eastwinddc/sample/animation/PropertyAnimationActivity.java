@@ -1,21 +1,24 @@
 package com.eastwinddc.sample.animation;
 
-import android.animation.Animator;
-import android.animation.AnimatorInflater;
-import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
+import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 
-import com.eastwinddc.sample.BaseActivity;
+import com.eastwinddc.sample.base.BaseActivity;
 import com.eastwinddc.sample.R;
 
 /**
  * Created by ewinddc on 2017/11/23.
  */
 
-public class PropertyAnimationActivity extends BaseActivity implements View.OnClickListener{
+public class PropertyAnimationActivity extends BaseActivity {
 
-    private View view;
-    private Animator animator;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+
+    private String[] titleArray = new String[]{"Layout Animation"};
     @Override
     protected int getLayoutId() {
         return R.layout.activity_animation;
@@ -24,20 +27,33 @@ public class PropertyAnimationActivity extends BaseActivity implements View.OnCl
     @Override
     protected void initViews() {
         super.initViews();
-        view = findViewById(R.id.view);
-        view.setOnClickListener(this);
-        animator = AnimatorInflater.loadAnimator(this,R.animator.property_anim);
-        animator.setTarget(view);
-        animator.setInterpolator(new AccelerateDecelerateInterpolator());
+        tabLayout = findViewById(R.id.tablayout);
+        viewPager = findViewById(R.id.viewPager);
+        viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
+            @Override
+            public Fragment getItem(int position) {
+                switch (position){
+                    case 0:
+                        return new LayoutAnimationFragment();
+                        default:
+                            return new LayoutAnimationFragment();
+                }
 
+            }
+
+            @Override
+            public int getCount() {
+                return titleArray.length;
+            }
+
+            @Nullable
+            @Override
+            public CharSequence getPageTitle(int position) {
+                return titleArray[position];
+            }
+        });
+
+        tabLayout.setupWithViewPager(viewPager);
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.view:
-                animator.start();
-                break;
-        }
-    }
 }

@@ -3,11 +3,13 @@ package com.eastwinddc.sample;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
+import com.eastwinddc.sample.base.BaseActivity;
+
 /**
  * Created by ewinddc on 2017/10/30.
  */
 
-public class CardViewActivity extends BaseActivity{
+public class CardViewActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
