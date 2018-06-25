@@ -18,7 +18,7 @@ public class PropertyAnimationActivity extends BaseActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
-    private String[] titleArray = new String[]{"KeyFrame","Layout"};
+    private String[] titleArray = new String[]{"general","Layout"};
     @Override
     protected int getLayoutId() {
         return R.layout.activity_animation;
@@ -34,7 +34,7 @@ public class PropertyAnimationActivity extends BaseActivity {
             public Fragment getItem(int position) {
                 switch (position){
                     case 0:
-                        return new KeyFrameFragment();
+                        return new PropertyAnimationFragment();
                     case 1:
                         return new LayoutAnimationFragment();
                         default:
