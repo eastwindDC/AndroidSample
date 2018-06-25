@@ -5,4 +5,8 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true">
 
+    <TextView
+        android:text="click me to add view with layout animation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>

@@ -34,6 +34,6 @@ public class LayoutAnimationFragment extends BaseFragment implements View.OnClic
     public void onClick(View v) {
         Button textView = new Button(getContext());
         textView.setText(String.valueOf(cur++));
-        root.addView(textView,0);
+        root.addView(textView,1);
     }
 }
