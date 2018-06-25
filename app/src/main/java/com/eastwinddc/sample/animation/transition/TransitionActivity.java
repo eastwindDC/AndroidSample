@@ -10,7 +10,7 @@ import com.eastwinddc.sample.R;
 import com.eastwinddc.sample.base.BaseActivity;
 
 /**
- * Created by yjren on 2018/6/25
+ * Created by ewinddc on 2018/6/25
  */
 public class TransitionActivity extends BaseActivity {
     private TabLayout tabLayout;
