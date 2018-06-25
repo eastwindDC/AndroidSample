@@ -1,4 +1,4 @@
-package com.eastwinddc.sample.animation;
+package com.eastwinddc.sample.animation.transition;
 
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -6,19 +6,17 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
-import com.eastwinddc.sample.base.BaseActivity;
 import com.eastwinddc.sample.R;
+import com.eastwinddc.sample.base.BaseActivity;
 
 /**
- * Created by ewinddc on 2017/11/23.
+ * Created by yjren on 2018/6/25
  */
-
-public class PropertyAnimationActivity extends BaseActivity {
-
+public class TransitionActivity extends BaseActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
-    private String[] titleArray = new String[]{"general","Layout"};
+    private String[] titleArray = new String[]{"general"};
     @Override
     protected int getLayoutId() {
         return R.layout.activity_tab_viewpager;
@@ -34,13 +32,10 @@ public class PropertyAnimationActivity extends BaseActivity {
             public Fragment getItem(int position) {
                 switch (position){
                     case 0:
-                        return new PropertyAnimationFragment();
-                    case 1:
-                        return new LayoutAnimationFragment();
+                        return new BasicTransitionFragment();
                         default:
-                            return new LayoutAnimationFragment();
+                            return new BasicTransitionFragment();
                 }
-
             }
 
             @Override
@@ -57,5 +52,4 @@ public class PropertyAnimationActivity extends BaseActivity {
 
         tabLayout.setupWithViewPager(viewPager);
     }
-
 }
