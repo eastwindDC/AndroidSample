@@ -16,7 +16,7 @@ public class TransitionActivity extends BaseActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
-    private String[] titleArray = new String[]{"general"};
+    private String[] titleArray = new String[]{"general","noScene"};
     @Override
     protected int getLayoutId() {
         return R.layout.activity_tab_viewpager;
@@ -33,6 +33,8 @@ public class TransitionActivity extends BaseActivity {
                 switch (position){
                     case 0:
                         return new BasicTransitionFragment();
+                    case 1:
+                        return new NoSceneFragment();
                         default:
                             return new BasicTransitionFragment();
                 }
