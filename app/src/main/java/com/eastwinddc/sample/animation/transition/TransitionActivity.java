@@ -5,6 +5,8 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.transition.Explode;
+import android.view.Window;
 
 import com.eastwinddc.sample.R;
 import com.eastwinddc.sample.base.BaseActivity;
@@ -16,9 +18,11 @@ public class TransitionActivity extends BaseActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
-    private String[] titleArray = new String[]{"general","noScene","custom"};
+    private String[] titleArray = new String[]{"general","noScene","custom","activity"};
     @Override
     protected int getLayoutId() {
+        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+//        getWindow().setExitTransition(new Explode());
         return R.layout.activity_tab_viewpager;
     }
 
@@ -37,6 +41,8 @@ public class TransitionActivity extends BaseActivity {
                         return new NoSceneFragment();
                     case 2:
                         return new CustomTransitionFragment();
+                    case 3:
+                        return new ActivityTransitionFragment();
                         default:
                             return new BasicTransitionFragment();
                 }

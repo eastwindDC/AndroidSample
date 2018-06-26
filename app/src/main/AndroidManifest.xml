@@ -60,6 +60,7 @@
         <activity android:name=".touchEvent.TouchEventActivity"/>
         <activity android:name=".hw.BtActivity"/>
         <activity android:name=".animation.transition.TransitionActivity"/>
+        <activity android:name=".animation.transition.TargetTransitionActivity"/>
     </application>
 
 </manifest>
