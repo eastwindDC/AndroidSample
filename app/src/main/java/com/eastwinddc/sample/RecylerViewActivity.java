@@ -36,6 +36,9 @@ public class RecylerViewActivity extends BaseActivity {
                 "i am a good man",
                 "he is a handsome boy",
                 "The weather is fine today",
+                "i am a good man",
+                "he is a handsome boy",
+                "The weather is fine today",
                 "what a day"
         });
         recyclerView.setAdapter(adapter);
