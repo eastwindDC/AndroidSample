@@ -1,6 +1,5 @@
-package com.eastwinddc.sample;
+package com.eastwinddc.sample.md;
 
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -8,8 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.LinkedList;
-import java.util.List;
+import com.eastwinddc.sample.R;
 
 /**
  * Created by eastwinddc on 2017/7/19.
@@ -19,9 +17,9 @@ class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
     private static final String TAG = "ItemAdapter";
     private String[] dataSet ;
     static class ViewHolder extends RecyclerView.ViewHolder{
-        private CardView cardView;
+        private View cardView;
         private TextView textView;
-        public ViewHolder(CardView itemView) {
+        public ViewHolder(View itemView) {
             super(itemView);
             cardView = itemView;
             textView = (TextView) cardView.findViewById(R.id.textView);
@@ -36,7 +34,7 @@ class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
         View root =  LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_search_list,parent,false);
 
-        ViewHolder vh = new ViewHolder((CardView) root);
+        ViewHolder vh = new ViewHolder(root);
         return vh;
     }
 

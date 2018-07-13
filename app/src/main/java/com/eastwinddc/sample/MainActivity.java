@@ -27,6 +27,7 @@ import com.eastwinddc.sample.animation.transition.TransitionActivity;
 import com.eastwinddc.sample.base.BaseActivity;
 import com.eastwinddc.sample.customView.CustomViewActivity;
 import com.eastwinddc.sample.hw.BtActivity;
+import com.eastwinddc.sample.md.RecylerViewActivity;
 import com.eastwinddc.sample.touchEvent.TouchEventActivity;
 
 public class MainActivity extends AppCompatActivity
