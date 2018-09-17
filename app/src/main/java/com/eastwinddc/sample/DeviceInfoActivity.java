@@ -85,7 +85,14 @@ public class DeviceInfoActivity extends BaseActivity {
         ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
         activityManager.getMemoryInfo(memoryInfo);
         String text= getString(R.string.kv_text,
-                "heapSize",String.valueOf(memoryInfo.totalMem/MB));
+                "TotalMem",String.valueOf(memoryInfo.totalMem/MB));
+        stringList.add(text);
+
+        text= getString(R.string.kv_text,
+                "heapLimit",String.valueOf(memoryInfo.threshold/MB));
+        stringList.add(text);
+        text = getString(R.string.kv_text,"largeHeapLimit",
+                String.valueOf(activityManager.getLargeMemoryClass()));
         stringList.add(text);
     }
     @SuppressLint("MissingPermission")
