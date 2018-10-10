@@ -61,6 +61,7 @@
         <activity android:name=".hw.BtActivity"/>
         <activity android:name=".animation.transition.TransitionActivity"/>
         <activity android:name=".animation.transition.TargetTransitionActivity"/>
+        <activity android:name=".md.ConstraintActivity"/>
     </application>
 
 </manifest>

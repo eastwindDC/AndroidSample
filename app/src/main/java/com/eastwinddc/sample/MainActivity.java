@@ -27,6 +27,7 @@ import com.eastwinddc.sample.animation.transition.TransitionActivity;
 import com.eastwinddc.sample.base.BaseActivity;
 import com.eastwinddc.sample.customView.CustomViewActivity;
 import com.eastwinddc.sample.hw.BtActivity;
+import com.eastwinddc.sample.md.ConstraintActivity;
 import com.eastwinddc.sample.md.RecylerViewActivity;
 import com.eastwinddc.sample.touchEvent.TouchEventActivity;
 
@@ -144,7 +145,9 @@ public class MainActivity extends AppCompatActivity
             new EntryActivity(R.string.animation_demo,ViewAnimationActivity.class),
             new EntryActivity(R.string.property_animation, PropertyAnimationActivity.class),
             new EntryActivity(R.string.bt, BtActivity.class),
-            new EntryActivity(R.string.transition, TransitionActivity.class)
+            new EntryActivity(R.string.transition, TransitionActivity.class),
+            new EntryActivity(R.string.constraint, ConstraintActivity.class)
+
 
     };
     class ListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener{
