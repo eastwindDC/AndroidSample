@@ -10,9 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.eastwinddc.sample.CardViewActivity;
 import com.eastwinddc.sample.R;
-import com.eastwinddc.sample.base.BaseActivity;
 import com.eastwinddc.sample.base.BaseFragment;
 
 /**
@@ -52,8 +50,8 @@ public class ActivityTransitionFragment extends BaseFragment implements View.OnC
     }
 
     private void startTransition(){
-        Intent intent = new Intent(getContext(), CardViewActivity.class);
-        startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity()).toBundle());
+//        Intent intent = new Intent(getContext(), CardViewActivity.class);
+//        startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity()).toBundle());
     }
     private void startShared(){
         Intent intent = new Intent(getContext(), TargetTransitionActivity.class);

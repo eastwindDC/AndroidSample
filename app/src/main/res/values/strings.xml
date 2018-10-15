@@ -12,7 +12,7 @@
     <string name="access_demo">access示例</string>
     <string name="custom_view">custom view</string>
     <string name="recycler_view">recycler_view</string>
-    <string name="card_view">card_view</string>
+    <string name="view_pager">view_pager</string>
     <string name="text_view">text_view</string>
     <string name="touch_event">touch_event</string>
     <string name="animation_demo">view_animation_demo</string>
