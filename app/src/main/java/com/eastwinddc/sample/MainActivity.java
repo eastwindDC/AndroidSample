@@ -25,6 +25,7 @@ import com.eastwinddc.sample.animation.PropertyAnimationActivity;
 import com.eastwinddc.sample.animation.ViewAnimationActivity;
 import com.eastwinddc.sample.animation.transition.TransitionActivity;
 import com.eastwinddc.sample.base.BaseActivity;
+import com.eastwinddc.sample.camera.CameraActivity;
 import com.eastwinddc.sample.customView.CustomViewActivity;
 import com.eastwinddc.sample.hw.BtActivity;
 import com.eastwinddc.sample.md.ConstraintActivity;
@@ -146,7 +147,8 @@ public class MainActivity extends AppCompatActivity
             new EntryActivity(R.string.property_animation, PropertyAnimationActivity.class),
             new EntryActivity(R.string.bt, BtActivity.class),
             new EntryActivity(R.string.transition, TransitionActivity.class),
-            new EntryActivity(R.string.constraint, ConstraintActivity.class)
+            new EntryActivity(R.string.constraint, ConstraintActivity.class),
+            new EntryActivity(R.string.camera, CameraActivity.class)
 
 
     };

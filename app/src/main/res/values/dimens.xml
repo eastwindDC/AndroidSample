@@ -9,4 +9,9 @@
     <dimen name="text_appbar">20dp</dimen>
     <dimen name="text_subTitle">16dp</dimen>
     <dimen name="text_body">14dp</dimen>
+    <dimen name="camera_window_padding">24dp</dimen>
+    <dimen name="camera_window_margin_top">200dp</dimen>
+    <dimen name="camera_window_stroke_width">1dp</dimen>
+    <dimen name="camera_window_corner">10dp</dimen>
+    <dimen name="camera_window_text_size">15dp</dimen>
 </resources>
