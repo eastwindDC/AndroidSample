@@ -1,4 +1,4 @@
-package com.eastwinddc.sample.md;
+package com.eastwinddc.sample.md.recyclerview;
 
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -15,18 +15,25 @@ import com.eastwinddc.sample.R;
 
 class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
     private static final String TAG = "ItemAdapter";
-    private String[] dataSet ;
-    static class ViewHolder extends RecyclerView.ViewHolder{
+    private int size;
+    class ViewHolder extends RecyclerView.ViewHolder{
         private View cardView;
         private TextView textView;
         public ViewHolder(View itemView) {
             super(itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    size++;
+                    notifyItemInserted(0);
+                }
+            });
             cardView = itemView;
             textView = (TextView) cardView.findViewById(R.id.textView);
         }
     }
-    public void setData(String[] data){
-        dataSet = data;
+    public void setData(int size){
+        this.size = size;
     }
     @Override
     public ItemAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -41,12 +48,11 @@ class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder: "+position);
-        holder.textView.setText(dataSet[position]);
+//        holder.textView.setText(dataSet.get(position));
     }
 
     @Override
     public int getItemCount() {
-        Log.d(TAG, "getItemCount: "+dataSet.length);
-        return dataSet.length;
+        return size;
     }
 }

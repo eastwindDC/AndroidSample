@@ -24,12 +24,15 @@ import com.eastwinddc.sample.accessibility.AccessibilityActivity;
 import com.eastwinddc.sample.animation.PropertyAnimationActivity;
 import com.eastwinddc.sample.animation.ViewAnimationActivity;
 import com.eastwinddc.sample.animation.transition.TransitionActivity;
+import com.eastwinddc.sample.async.EventBusActivity;
 import com.eastwinddc.sample.base.BaseActivity;
 import com.eastwinddc.sample.camera.CameraActivity;
 import com.eastwinddc.sample.customView.CustomViewActivity;
+import com.eastwinddc.sample.http.HttpActivity;
 import com.eastwinddc.sample.hw.BtActivity;
 import com.eastwinddc.sample.md.ConstraintActivity;
-import com.eastwinddc.sample.md.RecylerViewActivity;
+import com.eastwinddc.sample.md.recyclerview.RecylerViewActivity;
+import com.eastwinddc.sample.rxjava.RxJavaActivity;
 import com.eastwinddc.sample.touchEvent.TouchEventActivity;
 
 public class MainActivity extends AppCompatActivity
@@ -148,8 +151,10 @@ public class MainActivity extends AppCompatActivity
             new EntryActivity(R.string.bt, BtActivity.class),
             new EntryActivity(R.string.transition, TransitionActivity.class),
             new EntryActivity(R.string.constraint, ConstraintActivity.class),
-            new EntryActivity(R.string.camera, CameraActivity.class)
-
+            new EntryActivity(R.string.camera, CameraActivity.class),
+            new EntryActivity(R.string.http, HttpActivity.class),
+            new EntryActivity(R.string.eventbus, EventBusActivity.class),
+            new EntryActivity(R.string.rxjava, RxJavaActivity.class)
 
     };
     class ListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener{

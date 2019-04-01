@@ -5,6 +5,8 @@ import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import butterknife.ButterKnife;
+
 /**
  * Created by eastwinddc on 2017/7/17.
  */
@@ -18,6 +20,7 @@ public abstract class BaseActivity extends AppCompatActivity{
     }
     protected void initViews(){
         setContentView(getLayoutId());
+        ButterKnife.bind(this);
     }
     protected abstract @LayoutRes int getLayoutId();
     @Override

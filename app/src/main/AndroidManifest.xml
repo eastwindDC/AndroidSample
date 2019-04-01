@@ -2,14 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.eastwinddc.sample">
 
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -18,6 +18,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".rxjava.RxJavaActivity"
+            android:label="@string/title_activity_rx_java"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".async.EventBusActivity" />
+        <activity android:name=".http.HttpActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -28,43 +34,45 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DeviceInfoActivity" />
+        <activity android:name=".accessibility.AccessibilityActivity" />
 
-        <activity android:name=".DeviceInfoActivity"/>
-
-        <activity android:name=".accessibility.AccessibilityActivity"/>
-        <service android:name=".accessibility.AccessService"
-            android:label="wechat monitor"
+        <service
+            android:name=".accessibility.AccessService"
             android:enabled="true"
             android:exported="true"
+            android:label="wechat monitor"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter>
-                <action android:name="android.accessibilityservice.AccessibilityService"/>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
             </intent-filter>
 
             <meta-data
                 android:name="android.accessibilityservice"
-                android:resource="@xml/access_service"/>
+                android:resource="@xml/access_service" />
         </service>
 
-        <activity android:name=".customView.CustomViewActivity"></activity>
-        <activity android:name=".md.RecylerViewActivity"></activity>
-        <activity android:name=".TextViewActivity"></activity>
-        <activity android:name=".animation.ViewAnimationActivity"/>
-        <activity android:name=".animation.PropertyAnimationActivity"/>
-
-        <activity android:name=".lockscreen.LockScreenActivity"
+        <activity android:name=".customView.CustomViewActivity" />
+        <activity android:name=".md.recyclerview.RecylerViewActivity" />
+        <activity android:name=".TextViewActivity" />
+        <activity android:name=".animation.ViewAnimationActivity" />
+        <activity android:name=".animation.PropertyAnimationActivity" />
+        <activity
+            android:name=".lockscreen.LockScreenActivity"
             android:launchMode="singleInstance"
-            android:theme="@style/AppTheme.Translucent"></activity>
-        <service android:name=".lockscreen.LockScreenService"/>
+            android:theme="@style/AppTheme.Translucent" />
 
-        <activity android:name=".touchEvent.TouchEventActivity"/>
-        <activity android:name=".hw.BtActivity"/>
-        <activity android:name=".animation.transition.TransitionActivity"/>
-        <activity android:name=".animation.transition.TargetTransitionActivity"/>
-        <activity android:name=".md.ConstraintActivity"/>
-        <activity android:name=".ViewPagerActivity"/>
-        <activity android:name=".camera.CameraActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <service android:name=".lockscreen.LockScreenService" />
+
+        <activity android:name=".touchEvent.TouchEventActivity" />
+        <activity android:name=".hw.BtActivity" />
+        <activity android:name=".animation.transition.TransitionActivity" />
+        <activity android:name=".animation.transition.TargetTransitionActivity" />
+        <activity android:name=".md.ConstraintActivity" />
+        <activity android:name=".ViewPagerActivity" />
+        <activity
+            android:name=".camera.CameraActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>

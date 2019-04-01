@@ -21,6 +21,9 @@
     <string name="transition">转场动画</string>
     <string name="constraint">Constraint</string>
     <string name="camera">相机</string>
+    <string name="http">http</string>
+    <string name="eventbus">eventbus</string>
+    <string name="rxjava">rxjava</string>
 
     <string name="plain_text">%s:\n兰陵美酒郁金香，玉碗盛来琥珀光。但使主人能醉客，不知何处是他乡</string>
     <string name="html_text">html:\n<b>兰陵美酒郁金香</b>，<i>玉碗盛来琥珀光</i>。<u>但使主人能醉客，不知何处是他乡</u></string>
@@ -29,4 +32,6 @@
 
     <!--<string name="kv_text">&lt;b>%s&lt;/b> : %s</string>-->
     <string name="kv_text">%1$s: %2$s</string>
+    <string name="title_activity_rx_java">RxJavaActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>

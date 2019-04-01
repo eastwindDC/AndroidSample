@@ -1,8 +1,9 @@
-package com.eastwinddc.sample.md;
+package com.eastwinddc.sample.md.recyclerview;
 
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -20,8 +21,7 @@ public class RecylerViewActivity extends BaseActivity {
     private static final String TAG = RecylerViewActivity.class.getSimpleName();
     private RecyclerView recyclerView;
     private ItemAdapter adapter;
-    private int pxSize;
-    private int space;
+    private int space = 10;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,21 +37,11 @@ public class RecylerViewActivity extends BaseActivity {
     protected void initViews() {
         super.initViews();
         recyclerView = (RecyclerView) findViewById(R.id.feedList);
-        recyclerView.setLayoutManager(new GridLayoutManager(this,3));
+        recyclerView.setLayoutManager(new GridLayoutManager(this,5));
         recyclerView.setHasFixedSize(true);
         adapter = new ItemAdapter();
-        pxSize = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,100,getResources().getDisplayMetrics());
-        Log.d(TAG, "initViews: pxSize "+pxSize);
-        space = 1080 - 3*pxSize;
-        Log.d(TAG, "initViews: all space "+space);
-        space /= 4;
-        adapter.setData(new String[]{
-                "i am a good man",
-                "he is a handsome boy",
-                "he is a handsome boy",
-                "The weather is fine today",
-                "what a day"
-        });
+        adapter.setData(3);
+        recyclerView.setItemAnimator(new MyItemAnimator());
         recyclerView.addItemDecoration(new MyItemDecoration());
         recyclerView.setAdapter(adapter);
 
@@ -61,27 +51,8 @@ public class RecylerViewActivity extends BaseActivity {
         @Override
         public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
             super.getItemOffsets(outRect, view, parent, state);
-
-            int pos = parent.getChildLayoutPosition(view) % 3;
-            switch (pos){
-                case 0:
-                    Log.d(TAG, "getItemOffsets: 0");
-                    outRect.right = space;
-                    break;
-                case 1:
-                    Log.d(TAG, "getItemOffsets: 1");
-                    outRect.left = space;
-                    outRect.right = space;
-//                    outRect.top = 100;
-                    break;
-                case 2:
-                    Log.d(TAG, "getItemOffsets: 2");
-                    outRect.left = space;
-//                    outRect.top = 150;
-                    break;
-            }
-
-
+            outRect.right = space;
+            outRect.bottom = space;
         }
     }
     @Override
