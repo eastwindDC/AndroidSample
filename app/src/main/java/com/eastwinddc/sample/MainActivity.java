@@ -28,6 +28,7 @@ import com.eastwinddc.sample.async.EventBusActivity;
 import com.eastwinddc.sample.base.BaseActivity;
 import com.eastwinddc.sample.camera.CameraActivity;
 import com.eastwinddc.sample.customView.CustomViewActivity;
+import com.eastwinddc.sample.dialog.DialogActivity;
 import com.eastwinddc.sample.http.HttpActivity;
 import com.eastwinddc.sample.hw.BtActivity;
 import com.eastwinddc.sample.md.ConstraintActivity;
@@ -154,7 +155,8 @@ public class MainActivity extends AppCompatActivity
             new EntryActivity(R.string.camera, CameraActivity.class),
             new EntryActivity(R.string.http, HttpActivity.class),
             new EntryActivity(R.string.eventbus, EventBusActivity.class),
-            new EntryActivity(R.string.rxjava, RxJavaActivity.class)
+            new EntryActivity(R.string.rxjava, RxJavaActivity.class),
+            new EntryActivity(R.string.dialog, DialogActivity.class)
 
     };
     class ListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener{

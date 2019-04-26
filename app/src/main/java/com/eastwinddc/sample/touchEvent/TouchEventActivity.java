@@ -32,7 +32,12 @@ public class TouchEventActivity extends BaseActivity implements View.OnTouchList
     protected void initViews() {
         super.initViews();
         root = (ViewGroup) findViewById(R.id.root_view);
-        root.setOnTouchListener(this);
+//        root.setOnTouchListener(this);
+        root.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
     }
 
     @Override
